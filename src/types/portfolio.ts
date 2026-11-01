@@ -64,6 +64,8 @@ export interface Project {
   readonly contributions: readonly string[];
   readonly images: readonly ProjectImageAsset[];
   readonly featured: boolean;
+  readonly liveUrl?: string;
+  readonly repoUrl?: string;
 }
 
 export interface ExperienceEntry {

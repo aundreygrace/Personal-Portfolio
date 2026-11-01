@@ -11,7 +11,7 @@ export function EducationSection() {
         {education.map((entry, i) => (
           <Reveal key={entry.id} index={i}>
             <div className="rounded-[4px] border-[1.5px] border-[var(--border-primary)] bg-[var(--bg-surface-elevated)] p-6 shadow-[3px_3px_0px_0px_var(--border-structural)]">
-              <h3 className="font-[var(--font-heading)] text-lg font-bold text-[var(--text-main)]">
+              <h3 className="font-[family-name:var(--font-heading)] text-lg font-bold text-[var(--text-main)]">
                 {entry.institution}
               </h3>
               <p className="mt-1 text-sm text-[var(--text-muted)]">{entry.program}</p>

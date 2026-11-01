@@ -21,3 +21,4 @@ export function SectionWrapper({ id, children, className, tone = "canvas" }: Sec
     </section>
   );
 }
+

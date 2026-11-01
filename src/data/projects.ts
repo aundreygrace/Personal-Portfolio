@@ -27,6 +27,8 @@ export const projects: readonly Project[] = [
       },
     ],
     featured: true,
+    liveUrl: "https://cariarena.xyz",
+    repoUrl: "https://github.com/aundreygrace/app-cariarena",
   },
   {
     id: "parkindo",
@@ -54,5 +56,7 @@ export const projects: readonly Project[] = [
       },
     ],
     featured: false,
+    liveUrl: "https://parkindo.vercel.app",
+    repoUrl: "https://github.com/aundreygrace/Parkindo",
   },
 ];

@@ -50,7 +50,7 @@ export function Navbar() {
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 md:px-8">
         <Link
           href="#top"
-          className="flex items-center gap-2 font-[var(--font-heading)] text-base font-bold text-[var(--text-main)]"
+          className="flex items-center gap-2 font-[family-name:var(--font-heading)] text-base font-bold text-[var(--text-main)]"
         >
           <span className="flex h-8 w-8 items-center justify-center rounded-[4px] border-[1.5px] border-[var(--border-primary)] bg-[var(--interactive-primary-bg)] text-sm font-bold text-[var(--interactive-primary-text)] shadow-[2px_2px_0px_0px_var(--border-primary)]">            AG
           </span>

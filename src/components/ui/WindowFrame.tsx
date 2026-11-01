@@ -41,3 +41,4 @@ export function WindowFrame({ label, image, caption, priority = false }: WindowF
     </figure>
   );
 }
+

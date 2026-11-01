@@ -80,6 +80,12 @@ export const certifications: readonly Certification[] = [
     name: "Junior Programmer",
     issueDate: "May 2026",
     expiryDate: "May 2029",
-    // No certificate image supplied for this credential — rendered as a text-only credential card.
+    image: {
+      src: "/certificates/bnsp-jp.jpg",
+      alt: "BNSP certificate: Junior Programmer",
+      width: 1060,
+      height: 714,
+    },
+    verifyHref: "https://drive.google.com/file/d/1JFYgefZjQetOt7B2MqAaJTK5yy94sD1z/view?usp=sharing"
   },
 ];

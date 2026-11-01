@@ -49,3 +49,4 @@ export function LinkedinGlyph({ size, width, height, ...rest }: GlyphProps) {
     </svg>
   );
 }
+

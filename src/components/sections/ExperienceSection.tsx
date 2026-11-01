@@ -19,7 +19,7 @@ export function ExperienceSection() {
           >
             <div className="flex flex-wrap items-start justify-between gap-3">
               <div>
-                <h3 className="font-[var(--font-heading)] text-lg font-bold text-[var(--text-main)]">
+                <h3 className="font-[family-name:var(--font-heading)] text-lg font-bold text-[var(--text-main)]">
                   {entry.role}
                 </h3>
                 <p className="text-sm text-[var(--text-muted)]">

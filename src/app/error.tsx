@@ -20,7 +20,7 @@ export default function GlobalError({
       <p className="font-mono text-[11px] tracking-[0.08em] text-[var(--text-muted)] uppercase">
         Error
       </p>
-      <h1 className="text-2xl font-[var(--font-heading)] font-bold text-[var(--text-main)]">
+      <h1 className="text-2xl font-[family-name:var(--font-heading)] font-bold text-[var(--text-main)]">
         Something went wrong.
       </h1>
       <p className="max-w-md text-sm text-[var(--text-muted)]">
@@ -32,3 +32,4 @@ export default function GlobalError({
     </div>
   );
 }
+

@@ -24,7 +24,7 @@ function SkillCard({ group }: { group: SkillGroup }) {
         )}
       >
         <div className="mb-3 flex items-center justify-between">
-          <h3 className="font-[var(--font-heading)] text-base font-semibold text-[var(--text-main)]">
+          <h3 className="font-[family-name:var(--font-heading)] text-base font-semibold text-[var(--text-main)]">
             {group.title}
           </h3>
           <Badge tone={group.tier === "core" ? "accent" : "neutral"}>{group.tag}</Badge>

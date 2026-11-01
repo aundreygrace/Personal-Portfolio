@@ -51,11 +51,6 @@ export function ContactSection() {
               </div>
             </Reveal>
           ))}
-
-          <div className="flex items-center gap-2 pt-2 font-mono text-[11px] uppercase tracking-[0.08em] text-[var(--text-muted)]">
-            <MapPin size={14} aria-hidden="true" />
-            {profile.location}
-          </div>
         </div>
 
         <Reveal index={channels.length}>

@@ -24,7 +24,7 @@ export function AboutSection() {
               <p className="font-mono text-[11px] tracking-[0.08em] text-[var(--text-muted)] uppercase">
                 Specialization
               </p>
-              <p className="mt-1 text-sm font-[var(--font-heading)] font-semibold text-[var(--text-main)]">
+              <p className="mt-1 text-sm font-[family-name:var(--font-heading)] font-semibold text-[var(--text-main)]">
                 {about.specialization}
               </p>
             </div>
@@ -32,7 +32,7 @@ export function AboutSection() {
               <p className="font-mono text-[11px] tracking-[0.08em] text-[var(--text-muted)] uppercase">
                 Primary Stack
               </p>
-              <p className="mt-1 text-sm font-[var(--font-heading)] font-semibold text-[var(--text-main)]">
+              <p className="mt-1 text-sm font-[family-name:var(--font-heading)] font-semibold text-[var(--text-main)]">
                 {about.primaryStack.join(" · ")}
               </p>
             </div>
@@ -45,7 +45,7 @@ export function AboutSection() {
               <p className="font-mono text-[11px] tracking-[0.08em] text-[var(--text-accent-blue)] uppercase">
                 Education
               </p>
-              <p className="mt-2 text-base font-[var(--font-heading)] font-semibold text-[var(--text-main)]">
+              <p className="mt-2 text-base font-[family-name:var(--font-heading)] font-semibold text-[var(--text-main)]">
                 {firstEducation.institution}
               </p>
               <p className="text-sm text-[var(--text-muted)]">{firstEducation.program}</p>
@@ -60,7 +60,7 @@ export function AboutSection() {
               <p className="font-mono text-[11px] tracking-[0.08em] text-[var(--text-accent-orange)] uppercase">
                 Internship
               </p>
-              <p className="mt-2 text-base font-[var(--font-heading)] font-semibold text-[var(--text-main)]">
+              <p className="mt-2 text-base font-[family-name:var(--font-heading)] font-semibold text-[var(--text-main)]">
                 {firstExperience.company}
               </p>
               <p className="text-sm text-[var(--text-muted)]">{firstExperience.role}</p>
@@ -74,3 +74,4 @@ export function AboutSection() {
     </SectionWrapper>
   );
 }
+

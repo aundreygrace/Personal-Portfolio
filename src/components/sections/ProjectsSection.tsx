@@ -1,6 +1,9 @@
+import { ExternalLink } from "lucide-react";
 import type { Project } from "@/types/portfolio";
 import { projects } from "@/data/projects";
 import { Badge } from "@/components/ui/Badge";
+import { Button } from "@/components/ui/Button";
+import { GithubGlyph } from "@/components/ui/BrandIcons";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { SectionWrapper } from "@/components/layout/SectionWrapper";
 import { WindowFrame } from "@/components/ui/WindowFrame";
@@ -27,10 +30,33 @@ function ProjectCard({ project, priority }: { project: Project; priority: boolea
 
         <div className="grid grid-cols-1 gap-8 p-5 md:p-8 lg:grid-cols-2">
           <div>
-            <h3 className="font-[var(--font-heading)] text-2xl font-bold text-[var(--text-main)]">
+            <h3 className="font-[family-name:var(--font-heading)] text-2xl font-bold text-[var(--text-main)]">
               {project.name}
             </h3>
             <p className="mt-1 text-sm text-[var(--text-muted)]">{project.tagline}</p>
+
+            {project.liveUrl || project.repoUrl ? (
+              <div className="mt-4 flex flex-wrap gap-3">
+                {project.liveUrl ? (
+                  <Button
+                    href={project.liveUrl}
+                    variant="primary"
+                    icon={<ExternalLink size={16} aria-hidden="true" />}
+                  >
+                    Live Preview
+                  </Button>
+                ) : null}
+                {project.repoUrl ? (
+                  <Button
+                    href={project.repoUrl}
+                    variant="secondary"
+                    icon={<GithubGlyph size={16} aria-hidden="true" />}
+                  >
+                    Repository
+                  </Button>
+                ) : null}
+              </div>
+            ) : null}
 
             <div className="mt-4 flex flex-wrap gap-2">
               {project.stack.map((tech) => (
@@ -50,7 +76,7 @@ function ProjectCard({ project, priority }: { project: Project; priority: boolea
                     <dt className="font-mono text-[10px] uppercase tracking-[0.08em] text-[var(--text-muted)]">
                       {metric.label}
                     </dt>
-                    <dd className="font-[var(--font-heading)] text-lg font-bold text-[var(--text-accent-blue)]">
+                    <dd className="font-[family-name:var(--font-heading)] text-lg font-bold text-[var(--text-accent-blue)]">
                       {metric.value}
                     </dd>
                   </div>
@@ -72,7 +98,7 @@ function ProjectCard({ project, priority }: { project: Project; priority: boolea
             {project.images.map((image, i) => (
               <WindowFrame
                 key={image.src}
-                label={`${project.id}.app/${i === 0 ? "dashboard" : "view"}`}
+                label={`${project.id}${i === 0 ? "" : "view"}`}
                 image={image}
                 priority={priority && i === 0}
               />

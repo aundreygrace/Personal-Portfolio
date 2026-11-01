@@ -18,7 +18,7 @@ export function SectionHeading({ index, kicker, title, description }: SectionHea
           {kicker}
         </span>
       </div>
-      <h2 className="font-[var(--font-heading)] text-[1.75rem] font-bold leading-tight tracking-[-0.01em] text-[var(--text-main)] md:text-[2rem]">
+      <h2 className="font-[family-name:var(--font-heading)] text-[1.75rem] font-bold leading-tight tracking-[-0.01em] text-[var(--text-main)] md:text-[2rem]">
         {title}
       </h2>
       {description ? (

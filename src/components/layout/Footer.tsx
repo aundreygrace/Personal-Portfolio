@@ -13,8 +13,8 @@ export function Footer() {
     <footer className="border-t-[1.5px] border-[var(--border-primary)] bg-[var(--bg-surface-warm)]">
       <div className="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-8 md:flex-row md:items-center md:justify-between md:px-8">
         <div>
-          <p className="text-sm font-[var(--font-heading)] font-bold text-[var(--text-main)]">
-            {profile.name} - {profile.role}
+          <p className="text-sm font-[family-name:var(--font-heading)] font-bold text-[var(--text-main)]">
+            {profile.fullName}
           </p>
           <p className="mt-1 font-mono text-[11px] tracking-[0.08em] text-[var(--text-muted)] uppercase">
             {profile.location}
@@ -50,9 +50,10 @@ export function Footer() {
         </div>
 
         <p className="font-mono text-[11px] text-[var(--text-muted)]">
-          © {year} {profile.name}.
+          © {year} {profile.fullName}.
         </p>
       </div>
     </footer>
   );
 }
+

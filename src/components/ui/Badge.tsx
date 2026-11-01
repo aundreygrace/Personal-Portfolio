@@ -32,3 +32,4 @@ export function Badge({ children, tone = "neutral", className }: BadgeProps) {
     </span>
   );
 }
+

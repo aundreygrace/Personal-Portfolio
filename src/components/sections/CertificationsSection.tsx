@@ -47,7 +47,7 @@ export function CertificationsSection() {
                 <p className="font-mono text-[10px] uppercase tracking-[0.08em] text-[var(--text-muted)]">
                   {cert.issuer}
                 </p>
-                <h3 className="font-[var(--font-heading)] text-sm font-semibold leading-snug text-[var(--text-main)]">
+                <h3 className="font-[family-name:var(--font-heading)] text-sm font-semibold leading-snug text-[var(--text-main)]">
                   {cert.name}
                 </h3>
                 <p className="mt-auto font-mono text-[11px] text-[var(--text-muted)]">

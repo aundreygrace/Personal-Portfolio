@@ -32,12 +32,10 @@ export const skillGroups: readonly SkillGroup[] = [
       "JavaScript",
       "React",
       "Next.js",
-      "Alpine.js",
       "HTML5",
       "CSS3",
       "Tailwind CSS",
       "Bootstrap",
-      "Chart.js",
     ],
   },
   {
