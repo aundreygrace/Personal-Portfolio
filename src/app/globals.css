@@ -1,0 +1,171 @@
+@import "tailwindcss";
+
+:root {
+  /* Surface Tokens */
+  --bg-canvas: #fffdf6;
+  --bg-surface-elevated: #ffffff;
+  --bg-surface-warm: #f8f1df;
+  --bg-surface-technical: #f6faff;
+  --bg-surface-tint: #eaf5ff;
+
+  /* Border Tokens */
+  --border-primary: #303c45;
+  --border-structural: #176c8d;
+  --border-muted: #cfdce7;
+  --border-subtle: rgba(48, 60, 69, 0.12);
+
+  /* Interactive & Status Tokens */
+  --interactive-primary-bg: #f18b43;
+  --interactive-primary-hover: #d9732b;
+  /* Dark Ink — matches the original Tectonic Parchment spec (buttons use
+     dark text on orange, not white) and clears the WCAG AA contrast check. */
+  --interactive-primary-text: #303c45;
+  --interactive-accent-bg: #176c8d;
+  --interactive-accent-text: #ffffff;
+  --status-online: #10b981;
+  --status-verified: #39bde2;
+
+  /* Typography Tokens */
+  --text-main: #303c45;
+  /* Darkened from the original #64748b to clear the 4.5:1 AA contrast
+     threshold on light backgrounds. */
+  --text-muted: #475569;
+  --text-on-dark: #ffffff;
+  --text-accent-blue: #176c8d;
+  --text-accent-orange: #c8651e;
+
+  /* Inverse surface (contact telemetry card) */
+  --inverse-surface: #26323b;
+  --inverse-on-surface: #e6f2fe;
+
+  --font-heading: "Fredoka", sans-serif;
+  --font-body: "Plus Jakarta Sans", sans-serif;
+  --font-mono-brand: "IBM Plex Mono", monospace;
+}
+
+@theme inline {
+  --color-background: var(--bg-canvas);
+  --color-foreground: var(--text-main);
+  --font-sans: var(--font-body);
+  --font-mono: var(--font-mono-brand);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  background: var(--bg-canvas);
+  color: var(--text-main);
+  font-family: var(--font-body);
+}
+
+::selection {
+  background: var(--status-verified);
+  color: var(--border-primary);
+}
+
+/* --- Interactive tilt + spotlight cards --- */
+.tilt-card {
+  position: relative;
+  transition: transform 0.15s ease-out;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.tilt-card-glow {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  pointer-events: none;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  background: radial-gradient(
+    280px circle at var(--glow-x, 50%) var(--glow-y, 50%),
+    rgba(57, 189, 226, 0.25),
+    transparent 70%
+  );
+}
+
+.tilt-card:hover .tilt-card-glow,
+.tilt-card:focus-within .tilt-card-glow {
+  opacity: 1;
+}
+
+/* --- Hero topology: flowing data-connector lines --- */
+.flow-line {
+  stroke-dasharray: 6 6;
+  animation: flow-dash 1.2s linear infinite;
+}
+
+@keyframes flow-dash {
+  to {
+    stroke-dashoffset: -24;
+  }
+}
+
+.topology-node {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  transform-origin: center;
+}
+
+.topology-node:hover,
+.topology-node:focus-visible {
+  transform: scale(1.04);
+}
+
+.topology-node:hover rect,
+.topology-node:focus-visible rect {
+  stroke: var(--interactive-primary-bg) !important;
+  stroke-width: 2.5px !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tilt-card {
+    transform: none !important;
+    transition: none;
+  }
+  .flow-line {
+    animation: none;
+  }
+}
+
+/* --- Scroll-triggered reveal: replays every time an element re-enters the
+   viewport, not just once on page load --- */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px) scale(0.96) rotate(-1.2deg);
+  transition:
+    opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.reveal[data-visible="true"] {
+  opacity: 1;
+  transform: translateY(0) scale(1) rotate(0deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
